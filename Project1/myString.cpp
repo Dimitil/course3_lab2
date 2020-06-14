@@ -68,6 +68,9 @@ void MyString::SetNewString(const char*  NewString)
 	 strcpy(m_pStr, NewString);
 }
 
+
+//--//--//--//--//--//--//-//--//--//--//--//--//--//--//--//--//--//--//--//--
+
 MyString* MyStringCat(int count, const MyString* str1, ...)
 {
 	va_list  argptr;
@@ -85,8 +88,6 @@ MyString* MyStringCat(int count, const MyString* str1, ...)
 		count--;
 	}
 	
-
-
 	buf1[79] = 0;
 	MyString* Res = new MyString(buf1);
 

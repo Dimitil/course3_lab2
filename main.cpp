@@ -6,6 +6,7 @@
 #include "myString.h"
 #include <iostream>
 #include "Shape.h"
+#include "Byte.h"
 
 #define	  stop __asm nop
 
@@ -323,9 +324,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 
 ////////////////////////////////////////////////////////////////////////
-/*
+
 	//Задание 10.Объединения (union) C++. Битовые поля.
 	//1.
+	std::cout << std::endl;
+	std::cout << "\nTask #10\n";
 	//Создайте следующие классы для различных представлений значений байта:
 	//Bin - для двоичного представления
 	//Hex - для шестнадцатерчного представления
@@ -345,13 +348,63 @@ int _tmain(int argc, _TCHAR* argv[])
 	//			восьмеричные, двоичные цифры;
 	//в) изменять отдельные двоичные, восьмеричные или шестнадцатеричные цифры;
 
-	MyByte byte(0x1f);
-	byte.ShowHex();
+	char num=0x22;
+	Bytes byte(num);
+	std::cout << "\nbyte = 0x" << std::hex; 
+	byte.ShowDec();
+
+	std::cout << std::endl << "ShowBin(): ";
 	byte.ShowBin();
-	//...
+
+	std::cout << "ShowBinPos(1): ";
+	byte.ShowBinPos(1);
+
+	std::cout << "ShowBinPos(2): ";
+	byte.ShowBinPos(2);
+
+	std::cout << "EditBin(2, 1).";
+	byte.EditBin(2, 1);
+	std::cout << std::endl;
+
+	std::cout << "ShowBinPos(2): ";
+	byte.ShowBinPos(2);
+
+	std::cout << "EditBin(2, 0).";
+	byte.EditBin(2, 0);
 
 
-*/
+
+	std::cout << std::endl << "ShowOct(): ";
+	byte.ShowOct();
+
+	std::cout << std::endl << "ShowOctPos(1): ";
+	byte.ShowOctPos(1);
+
+	std::cout << std::endl << "EditOct(1, 3);";
+	byte.EditOct(1, 3);
+
+	std::cout << std::endl << "ShowOct() : ";
+	byte.ShowOct();
+
+	std::cout << std::endl << "EditOct(1, 4);";
+	byte.EditOct(1, 4);
+
+
+
+	std::cout << std::endl << "ShowHex();";
+	byte.ShowHex();
+
+	std::cout << std::endl << "ShowHexPos(1): ";
+	byte.ShowHexPos(1);
+
+	std::cout << std::endl << "EditHex(1, 10);";
+	byte.EditHex(1, 10);
+
+	std::cout << std::endl << "ShowHex();";
+	byte.ShowHex();
+
+	std::cout << std::endl << "ShowHexPos(1): ";
+	byte.ShowHexPos(1);
 	return 0;
 }//endmain
 
