@@ -23,35 +23,11 @@ void Bin::Show() const
 void Bin::ShowPos(int pos) const //выводим цифру в позиции 
 {
 	std::cout << std::endl;
-	switch (pos)
-	{
-	case 0: 
-		std::cout << static_cast<int>(m_bin0);
-		break;
-	case 1:
-		std::cout << static_cast<int>(m_bin1);
-		break;
-	case 2:
-		std::cout << static_cast<int>(m_bin2);
-		break;
-	case 3:
-		std::cout << static_cast<int>(m_bin3);
-		break;
-	case 4:
-		std::cout << static_cast<int>(m_bin4);
-		break;
-	case 5:
-		std::cout << static_cast<int>(m_bin5);
-		break;
-	case 6:
-		std::cout << static_cast<int>(m_bin6);
-		break;
-	case 7:
-		std::cout << static_cast<int>(m_bin7);
-		break;
-	default:
-		std::cout << "\nError. enter pos in range [0 to 7]\n";
-	}
+
+	int ar_num[8] = { m_bin0, m_bin1, m_bin2, m_bin3, m_bin4, m_bin5, m_bin6, m_bin7 };
+
+	std::cout << ar_num[pos];
+
 	std::cout << std::endl;
 }
 

@@ -71,25 +71,26 @@ void MyString::SetNewString(const char*  NewString)
 
 //--//--//--//--//--//--//-//--//--//--//--//--//--//--//--//--//--//--//--//--
 
-MyString* MyStringCat(int count, const MyString* str1, ...)
+MyString* MyStringCat(const char* str, ...)
 {
 	va_list  argptr;
-	va_start(argptr, str1);
+	va_start(argptr, str);
 
 	char buf1[80];
-	strcpy(buf1, str1->GetString());
-	count--;
-
 	char buf2[80];
-	while (count)
+
+	strcpy(buf1, str);
+	strcpy(buf2, va_arg(argptr, char* const));
+
+	while (strcmp(buf2, "end$"))			//как сделать 0 - конец ввода?
 	{
-		strcpy(buf2, va_arg(argptr, MyString*)->GetString());
 		strcat(buf1, buf2);
-		count--;
+		strcpy(buf2, va_arg(argptr, char* const));
 	}
 	
-	buf1[79] = 0;
 	MyString* Res = new MyString(buf1);
+
+	va_end(argptr);
 
 	return Res;
 }

@@ -17,5 +17,4 @@ public:
 	void SetNewString(const char* NewString);
 };
 
-MyString* MyStringCat(int count, const MyString* str1, ...); // первый параметр ввести количество аргументов.
-													//возвращает динамический объект. не забудь удалить его
+MyString* MyStringCat(const char* str, ...);  //как сделать 0 - конец ввода?

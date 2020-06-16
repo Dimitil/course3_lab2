@@ -65,7 +65,7 @@ class Circle : public Shape {
 
 		Circle(int x = 200, int y = 200, int radius = 25, color c = RED);
 
-		Circle(Rect r);				//конструктор принимает прямоугольник, получаем вписанный в него круг
+		Circle(const Rect &r);				//конструктор принимает прямоугольник, получаем вписанный в него круг
 		
 		virtual ~Circle()						{ std::cout << "\nNow I am in Circle's destructor!\n"; }
 
